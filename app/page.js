@@ -1,14 +1,11 @@
 // import Image from "next/image";
-import styles from "./page.module.css";
+// import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Hello Rushen
-        </p>
-      </div>
-    </main>
+    <>
+      <h1>Home</h1>
+      <p>Lorem</p>
+      </>
   );
 }
