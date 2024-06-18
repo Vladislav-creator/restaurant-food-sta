@@ -1,0 +1,106 @@
+.imageWrapper {
+    position: relative;
+    width: 95%;
+    height: 95%; /* Добавьте явно заданную высоту */
+  }
+  .sliderContainer {
+    position: relative;
+    width: 40%; /* Занимает половину ширины экрана */
+    margin: 0 auto; /* Центрируем по горизонтали */
+  }
+  
+  .imageFrame {
+    position: relative;
+    width: 100%; /* Ширина кадра */
+    
+    padding-top: 94%; /* Соотношение сторон 1:1 */
+    border: 12px solid yellow; /* Толстый желтый бордер */
+    box-sizing: border-box;
+     overflow: hidden;  
+    border-radius: 50%;
+  }
+  
+  .slider {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sliderWindow {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .sliderLine {
+    display: flex;
+    width: 100%;
+  }
+  
+  .sliderItem {
+    position: relative;
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 100%;
+    
+    /* overflow: hidden; */
+  }
+  
+  .imageContainer > div {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .dishDetails {
+    text-align: center;
+    margin-top: 20px; /* Увеличиваем отступ */
+  }
+  
+  .dishName {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .ingredients {
+    font-style: italic;
+    color: #666;
+  }
+  
+  .prevButton,
+  .nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101;
+  }
+  
+  .prevButton {
+    left: -17px;
+   
+  }
+  
+  .nextButton {
+    right: -17px;
+   
+  }
+  
+  .arrowIcon {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
