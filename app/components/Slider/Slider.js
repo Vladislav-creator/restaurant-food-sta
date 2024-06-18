@@ -4,9 +4,9 @@ import Image from 'next/image';
 import styles from './Slider.module.css';
 
 const dishes = [
-  { id: 1, name: "Соєві катлетки із зеленню, домашнім майонезом та лавашем", ingredients: "Соеві катлетки, листя салату, петрушка, домашній майонез, лаваш", url: "/img/hero/desktop-hero512.png" },
-  { id: 2, name: "Грецький салат", ingredients: "Оливкова олія, лимонний сік, часник, сушений орегано, морська сіль, свіжий чорний перець, помідори, червона цибуля, огірки, зелений стручковий перець, сир фета, маслини без кісточок, руккола, листя салату, кукурудза", url: "/img/hero/desktop-hero-2.png" },
-  { id: 3, name: "Тропічний салат зі смаженим яйцем", ingredients: "Манго, молоді паростки Брокколі, червоний перець, спаржа, томатный соус, смажене яйце, хліб український чорний", url: "/img/hero/desktop-hero-3.png" },
+  { id: 1, name: "Соєві катлетки із зеленню, домашнім майонезом та лавашем", ingredients: "Соеві катлетки, листя салату, петрушка, домашній майонез, лаваш", url: "./img/hero/desktop-hero512.png" },
+  { id: 2, name: "Грецький салат", ingredients: "Оливкова олія, лимонний сік, часник, сушений орегано, морська сіль, свіжий чорний перець, помідори, червона цибуля, огірки, зелений стручковий перець, сир фета, маслини без кісточок, руккола, листя салату, кукурудза", url: "./img/hero/desktop-hero-2.png" },
+  { id: 3, name: "Тропічний салат зі смаженим яйцем", ingredients: "Манго, молоді паростки Брокколі, червоний перець, спаржа, томатный соус, смажене яйце, хліб український чорний", url: "./img/hero/desktop-hero-3.png" },
 ];
 
 const TheSlider = () => {
@@ -30,12 +30,12 @@ const TheSlider = () => {
       <div className={styles.sliderContainer}>
         <button onClick={prevSlide} className={styles.prevButton}>
           <svg className={styles.sliderArrow} width="30" height="30">
-            <use className={styles.sliderIcon} href="/img/hero/icons.svg#icon-v-left"></use>
+            <use className={styles.sliderIcon} href="./img/hero/icons.svg#icon-v-left"></use>
           </svg>
         </button>
         <button onClick={nextSlide} className={styles.nextButton}>
           <svg className={styles.sliderArrow} width="30" height="30">
-            <use className={styles.sliderIcon} href="/img/hero/icons.svg#icon-v-right"></use>
+            <use className={styles.sliderIcon} href="./img/hero/icons.svg#icon-v-right"></use>
           </svg>
         </button>
         <div className={styles.imageFrame}>
