@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header>
        <Image
-           src="/img/hero/food-sta.svg"
+           src="./img/hero/food-sta.svg"
            alt="food-sta"
           //  className={styles.foodSta}
            width={66}
