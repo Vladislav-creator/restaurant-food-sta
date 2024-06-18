@@ -17,6 +17,7 @@ body {
 }
 h1, h2, h3 {
   text-align: center;
+  color: gray;
   padding: 20px;
 }
 a {
@@ -33,11 +34,6 @@ header{
   box-shadow: 0 4px 24px rgba(105, 105, 105, 0.1); /* Тень */
 }
 
-/* main {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  padding: 20px;
- 
-} */
 header a{
   margin-left: 20px;
 }
@@ -47,11 +43,8 @@ header a{
 .link {
   display: inline-block;
   text-decoration: none;
-  
   font-weight: 700;
   color: gray;
-
-
 
 &:hover {
   color: 
@@ -64,4 +57,14 @@ header a{
   rgba(187, 243, 48, 1);
   color: 
   rgba(187, 243, 48, 1);
+} 
+.myOrder {
+  text-decoration: none;
+  font-weight: 700;
+  color: 
+  orange; 
+}
+.myOrder.active {
+  border-bottom: 2px solid
+  orange;
 } 

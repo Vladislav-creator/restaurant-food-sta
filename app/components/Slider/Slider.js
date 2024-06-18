@@ -75,8 +75,8 @@ const TheSlider = () => {
         </div>
       </div>
       <div className={styles.dishDetails}>
-        <p className={styles.dishName}>Блюдо: "{dishes[currentIndex].name}"</p>
-        <div className={styles.divIngredients}><p className={styles.ingredients}>{dishes[currentIndex].ingredients}</p></div>
+        <h3 className={styles.dishName}>Блюдо: "{dishes[currentIndex].name}"</h3>
+        <div className={styles.divIngredients}><p className={styles.ingredients}>Склад: {dishes[currentIndex].ingredients}</p></div>
         <p className={styles.weight}>Вага: {dishes[currentIndex].weight} г</p>
         <p className={styles.price}>{dishes[currentIndex].price} грн.</p>
         <button className={styles.buttonOrderNow}>Замовити</button>

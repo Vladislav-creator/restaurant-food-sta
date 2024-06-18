@@ -2,7 +2,7 @@ export default async function About() {
     
     return (
       <>
-      <h1>About</h1>
+      <h1>Про нас</h1>
       <p>Lorem</p>
       </>
       

@@ -80,6 +80,8 @@
   .dishName {
     font-weight: bold;
     margin-bottom: 20px;
+    color: gray;
+    
   }
   
   .ingredients {
