@@ -4,9 +4,9 @@ import Image from 'next/image';
 import styles from './Slider.module.css';
 
 const dishes = [
-  { id: 1, name: "Соєві катлетки із зеленню, домашнім майонезом та лавашем", ingredients: "Соеві катлетки, листя салату, петрушка, домашній майонез, лаваш", url: "./img/hero/desktop-hero512.png" },
-  { id: 2, name: "Грецький салат", ingredients: "Оливкова олія, лимонний сік, часник, сушений орегано, морська сіль, свіжий чорний перець, помідори, червона цибуля, огірки, зелений стручковий перець, сир фета, маслини без кісточок, руккола, листя салату, кукурудза", url: "./img/hero/desktop-hero-2.png" },
-  { id: 3, name: "Тропічний салат зі смаженим яйцем", ingredients: "Манго, молоді паростки Брокколі, червоний перець, спаржа, томатный соус, смажене яйце, хліб український чорний", url: "./img/hero/desktop-hero-3.png" },
+  { id: 1, name: "Соєві катлетки із зеленню, домашнім майонезом та лавашем", ingredients: "Соеві катлетки, листя салату, петрушка, домашній майонез, лаваш", price: 160, weight: "100/50/40/100", url: "./img/hero/desktop-hero512.png" },
+  { id: 2, name: "Грецький салат", ingredients: "Оливкова олія, лимонний сік, часник, сушений орегано, морська сіль, свіжий чорний перець, помідори, червона цибуля, огірки, зелений стручковий перець, сир фета, маслини без кісточок, руккола, листя салату, кукурудза", price: 140, weight: "250", url: "./img/hero/desktop-hero-2.png" },
+  { id: 3, name: "Тропічний салат зі смаженим яйцем", ingredients: "Манго, молоді паростки Брокколі, червоний перець, спаржа, томатный соус, смажене яйце, хліб український чорний", price: 150, weight: "260", url: "./img/hero/desktop-hero-3.png" },
 ];
 
 const TheSlider = () => {
@@ -22,8 +22,13 @@ const TheSlider = () => {
   };
 
   return (
-    <div className={styles.wrapperSliderDishDetails}>
-      
+    <div className={styles.wrapperMainHero}>
+      <div className={styles.wrapperTitleDescriptionButtonOrder}>
+        <h3>Насолоджуйся улюбленою їжею !!!<br/>
+        </h3>
+        <p>У нашому ресторані ви зможете скуштувати найсмачніші, вишукані страви Європейської кухні.</p>
+        
+      </div>
       <div className={styles.sliderContainer}>
         <button onClick={prevSlide} className={styles.prevButton}>
           <svg className={styles.sliderArrow} width="30" height="30">
@@ -43,15 +48,23 @@ const TheSlider = () => {
                   <div key={index} className={styles.sliderItem}>
                     <div className={styles.imageContainer}>
                       <div className={styles.imageWrapper}>
-                        <Image
+                        {/* <Image
                           src={dish.url}
                           alt={dish.name}
                           style={{ objectFit: 'cover', objectPosition: 'center' }}
                           className={styles.image}
-                          width={450}
-                          height={450}
+                          width={400}
+                          height={400}
                           priority={true}
-                        />
+                        /> */}
+                         <Image
+    src={dish.url}
+    alt={dish.name}
+    layout="fill"
+    style={{ objectFit: 'cover', objectPosition: 'center' }}
+    className={styles.image}
+    priority={true}
+  />
                       </div>
                     </div>
                   </div>
@@ -62,8 +75,11 @@ const TheSlider = () => {
         </div>
       </div>
       <div className={styles.dishDetails}>
-        <p className={styles.dishName}>{dishes[currentIndex].name}</p>
-        <p className={styles.ingredients}>{dishes[currentIndex].ingredients}</p>
+        <p className={styles.dishName}>Блюдо: "{dishes[currentIndex].name}"</p>
+        <div className={styles.divIngredients}><p className={styles.ingredients}>{dishes[currentIndex].ingredients}</p></div>
+        <p className={styles.weight}>Вага: {dishes[currentIndex].weight} г</p>
+        <p className={styles.price}>{dishes[currentIndex].price} грн.</p>
+        <button className={styles.buttonOrderNow}>Замовити</button>
       </div>
     </div>
   );

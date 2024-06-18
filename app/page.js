@@ -13,7 +13,7 @@ const Slider = dynamic(() => import('./components/Slider/Slider'), { ssr: false 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>Home</h1>
+      <h1>Ресторан "Food Sta"</h1>
       <div className={styles.description}>
         <Slider />
       </div>
