@@ -5,7 +5,7 @@
   }
   .sliderContainer {
     position: relative;
-    width: 40%; /* Занимает половину ширины экрана */
+    width: 40%; 
     margin: 0 auto; /* Центрируем по горизонтали */
   }
   
@@ -65,11 +65,12 @@
   .dishDetails {
     text-align: center;
     margin-top: 20px; /* Увеличиваем отступ */
+    width: 30%;
   }
   
   .dishName {
     font-weight: bold;
-    margin-top: 10px;
+    margin-bottom: 20px;
   }
   
   .ingredients {
@@ -82,11 +83,12 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: white;
+    background: rgb(254, 254, 254);
     border: none;
     cursor: pointer;
     padding: 5px;
     z-index: 101;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.06);
   }
   
   .prevButton {
@@ -103,4 +105,8 @@
     width: 20px;
     height: 20px;
     margin: 0 5px;
+  }
+  .wrapperSliderDishDetails{
+    display: flex;
+    
   }

@@ -22,11 +22,8 @@ const TheSlider = () => {
   };
 
   return (
-    <div>
-      <div className={styles.dishDetails}>
-        <p className={styles.dishName}>{dishes[currentIndex].name}</p>
+    <div className={styles.wrapperSliderDishDetails}>
       
-      </div>
       <div className={styles.sliderContainer}>
         <button onClick={prevSlide} className={styles.prevButton}>
           <svg className={styles.sliderArrow} width="30" height="30">
@@ -63,6 +60,10 @@ const TheSlider = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.dishDetails}>
+        <p className={styles.dishName}>{dishes[currentIndex].name}</p>
+        <p className={styles.ingredients}>{dishes[currentIndex].ingredients}</p>
       </div>
     </div>
   );
