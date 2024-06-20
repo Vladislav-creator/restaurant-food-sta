@@ -2,12 +2,7 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './Slider.module.css';
-
-const dishes = [
-  { id: 1, name: "Соєві катлетки із зеленню, домашнім майонезом та лавашем", ingredients: "Соеві катлетки, листя салату, петрушка, домашній майонез, лаваш", price: 160, weight: "100/50/40/100", url: "./img/hero/desktop-hero512.png" },
-  { id: 2, name: "Грецький салат", ingredients: "Оливкова олія, лимонний сік, часник, сушений орегано, морська сіль, свіжий чорний перець, помідори, червона цибуля, огірки, зелений стручковий перець, сир фета, маслини без кісточок, руккола, листя салату, кукурудза", price: 140, weight: "250", url: "./img/hero/desktop-hero-2.png" },
-  { id: 3, name: "Тропічний салат зі смаженим яйцем", ingredients: "Манго, молоді паростки Брокколі, червоний перець, спаржа, томатный соус, смажене яйце, хліб український чорний", price: 150, weight: "260", url: "./img/hero/desktop-hero-3.png" },
-];
+import {dishes} from '../ArrayDishes';
 
 const TheSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -48,15 +43,6 @@ const TheSlider = () => {
                   <div key={index} className={styles.sliderItem}>
                     <div className={styles.imageContainer}>
                       <div className={styles.imageWrapper}>
-                        {/* <Image
-                          src={dish.url}
-                          alt={dish.name}
-                          style={{ objectFit: 'cover', objectPosition: 'center' }}
-                          className={styles.image}
-                          width={400}
-                          height={400}
-                          priority={true}
-                        /> */}
                          <Image
     src={dish.url}
     alt={dish.name}
