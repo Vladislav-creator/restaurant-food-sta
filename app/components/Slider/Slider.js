@@ -1,12 +1,28 @@
 "use client";
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Slider.module.css';
-import {dishes} from '../ArrayDishes';
+import  {getAllDishes}  from '../../servises';  // Импортируйте функцию получения данных
 
 const TheSlider = () => {
+  const [dishes, setDishes] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getAllDishes();
+        setDishes(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching dishes:', error);
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % dishes.length);
@@ -16,13 +32,16 @@ const TheSlider = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + dishes.length) % dishes.length);
   };
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className={styles.wrapperMainHero}>
       <div className={styles.wrapperTitleDescriptionButtonOrder}>
-        <h3>Насолоджуйся улюбленою їжею !!!<br/>
+        <h3>Насолоджуйся улюбленою їжею !!!<br />
         </h3>
         <p>У нашому ресторані ви зможете скуштувати найсмачніші, вишукані страви Європейської кухні.</p>
-        
       </div>
       <div className={styles.sliderContainer}>
         <button onClick={prevSlide} className={styles.prevButton}>
@@ -43,14 +62,14 @@ const TheSlider = () => {
                   <div key={index} className={styles.sliderItem}>
                     <div className={styles.imageContainer}>
                       <div className={styles.imageWrapper}>
-                         <Image
-    src={dish.url}
-    alt={dish.name}
-    layout="fill"
-    style={{ objectFit: 'cover', objectPosition: 'center' }}
-    className={styles.image}
-    priority={true}
-  />
+                        <Image
+                          src={dish.url}
+                          alt={dish.name}
+                          layout="fill"
+                          style={{ objectFit: 'cover', objectPosition: 'center' }}
+                          className={styles.image}
+                          priority={true}
+                        />
                       </div>
                     </div>
                   </div>
@@ -61,7 +80,7 @@ const TheSlider = () => {
         </div>
       </div>
       <div className={styles.dishDetails}>
-        <h3 className={styles.dishName}>Блюдо: "{dishes[currentIndex].name}"</h3>
+        <h4 className={styles.dishName}>"{dishes[currentIndex].name}"</h4>
         <div className={styles.divIngredients}><p className={styles.ingredients}>Склад: {dishes[currentIndex].ingredients}</p></div>
         <p className={styles.weight}>Вага: {dishes[currentIndex].weight} г</p>
         <p className={styles.price}>{dishes[currentIndex].price} грн.</p>

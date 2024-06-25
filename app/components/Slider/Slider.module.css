@@ -81,6 +81,8 @@
     font-weight: bold;
     margin-bottom: 20px;
     color: gray;
+    font-size: 20px;
+    text-align: center;
     
   }
   
@@ -100,6 +102,12 @@
     padding: 5px;
     z-index: 100;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.06);
+    
+&:hover {
+  fill: 
+  orangered;
+  
+} 
   }
   
   .prevButton {
