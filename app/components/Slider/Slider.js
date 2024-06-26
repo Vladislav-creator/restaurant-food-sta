@@ -2,7 +2,7 @@
 import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import styles from './Slider.module.css';
-import  {getAllDishes}  from '../../servises';  // Импортируйте функцию получения данных
+import  {getAllDishes}  from '../../services';  
 
 const TheSlider = () => {
   const [dishes, setDishes] = useState([]);
@@ -33,13 +33,13 @@ const TheSlider = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Почекайте трошки, йде завантаження Бекенд знаходиться на RENDER, тому перше завантаження йде до 4-5хвилин, як що довго не входили у додаток...<span className={styles.emodji}>👨‍🍳🥣🍔🥘🍲🥗🍳</span></div>;
   }
 
   return (
     <div className={styles.wrapperMainHero}>
       <div className={styles.wrapperTitleDescriptionButtonOrder}>
-        <h3>Насолоджуйся улюбленою їжею !!!<br />
+        <h3>Насолоджуйся улюбленою їжею !!!<br /><span className={styles.emodji}>👨‍🍳🥣🍔🥘🍲🥗</span>
         </h3>
         <p>У нашому ресторані ви зможете скуштувати найсмачніші, вишукані страви Європейської кухні.</p>
       </div>
