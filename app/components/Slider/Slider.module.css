@@ -27,8 +27,6 @@
     border-radius: 50%;
   }
   
-  
-  
   .sliderWindow {
     display: flex;
     transition: transform 0.5s ease;
@@ -51,7 +49,6 @@
     width: 100%;
     height: auto;
     padding-top: 100%;
-    
     /* overflow: hidden; */
   }
   
@@ -63,34 +60,6 @@
     bottom: 0;
     
   }
-  
-  .dishDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-    margin-top: 20px; /* Увеличиваем отступ */
-    width: 33%;
-    padding: 10px;
-  }
-  .divIngredients{
-    text-align: start;
-    padding-left: 15px;
-  }
-  .dishName {
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: gray;
-    font-size: 20px;
-    text-align: center;
-    
-  }
-  
-  .ingredients {
-    font-style: italic;
-    color: #666;
-  }
-  
   .prevButton,
   .nextButton {
     position: absolute;
@@ -112,12 +81,10 @@
   
   .prevButton {
     left: -19px;
-   
   }
   
   .nextButton {
     right: -17px;
-   
   }
   
   .arrowIcon {
@@ -128,28 +95,16 @@
   .wrapperMainHero{
     display: flex;
     gap: 10px;
-    
   }
-  .buttonOrderNow {
-    background-color: rgba(187, 243, 48, 1);
-    border-radius: 30px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 20px; /* Верхний и нижний паддинг 10px, левый и правый паддинг 20px */
-  }
+  
   .wrapperTitleDescriptionSelects{
     width: 33%;
     padding: 10px 25px 10px 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-
   }
-  .ingredients{
-  text-indent: 15px;
-}
+ 
 .emodji{
   font-size: 40px;
 }

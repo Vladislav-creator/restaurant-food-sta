@@ -1,0 +1,34 @@
+.ingredients{
+    text-indent: 15px;
+    font-style: italic;
+    color: #666;
+  }
+  .buttonOrderNow {
+    background-color: rgba(187, 243, 48, 1);
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px; /* Верхний и нижний паддинг 10px, левый и правый паддинг 20px */
+  }
+  .dishName {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 20px;
+    text-align: center;
+  }
+  .divIngredients{
+    text-align: start;
+    padding-left: 15px;
+  }
+  .dishDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    margin-top: 20px; /* Увеличиваем отступ */
+    width: 33%;
+    padding: 10px;
+  }

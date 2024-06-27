@@ -1,0 +1,12 @@
+.myOrderContainer {
+    padding: 20px;
+  }
+  
+  .orderItem {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  /* h3 {
+    margin-top: 20px;
+  } */
