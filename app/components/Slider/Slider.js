@@ -1,20 +1,26 @@
 "use client";
-import { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
+import MySelectComponent from '../MySelectComponent/MySelectComponent';
 import styles from './Slider.module.css';
-import  {getAllDishes}  from '../../services';  
+import { getAllDishes } from '../../services';
 
 const TheSlider = () => {
   const [dishes, setDishes] = useState([]);
+  const [filteredDishes, setFilteredDishes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedType, setSelectedType] = useState(null);
+  const [selectedDish, setSelectedDish] = useState(null);
   const sliderRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await getAllDishes();
-        setDishes(data);
+        const sortedDishes = data.sort((a, b) => a.level - b.level);
+        setDishes(sortedDishes);
+        setFilteredDishes(sortedDishes);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching dishes:', error);
@@ -24,24 +30,72 @@ const TheSlider = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if (selectedType !== null && selectedType.value !== null) {
+      const filtered = dishes.filter(dish => dish.type === selectedType.value);
+      setFilteredDishes(filtered);
+      setSelectedDish(null); // Сбрасываем выбранное блюдо при изменении типа
+      setCurrentIndex(0); // Сбрасываем текущий индекс при изменении типа
+    } else {
+      setFilteredDishes(dishes);
+      setSelectedDish(null); // Сбрасываем выбранное блюдо при null типе
+      setCurrentIndex(0); // Сбрасываем текущий индекс при null типе
+    }
+  }, [selectedType, dishes]);
+
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % dishes.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredDishes.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + dishes.length) % dishes.length);
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + filteredDishes.length) % filteredDishes.length);
   };
 
+  useEffect(() => {
+    // При изменении выбранного блюда обновляем индекс слайдера
+    if (selectedDish !== null) {
+      const newIndex = filteredDishes.findIndex(dish => dish.name === selectedDish.value);
+      if (newIndex !== -1) {
+        setCurrentIndex(newIndex);
+      }
+    }
+  }, [selectedDish, filteredDishes]);
+
   if (loading) {
-    return <div>Почекайте трошки, йде завантаження Бекенд знаходиться на RENDER, тому перше завантаження йде до 4-5хвилин, як що довго не входили у додаток...<span className={styles.emodji}>👨‍🍳🥣🍔🥘🍲🥗🍳</span></div>;
+    return <div>Зачекайте трохи, йде завантаження...<span className={styles.emodji}>👨‍🍳🥣🍔🥘🍲🥗</span></div>;
   }
 
   return (
     <div className={styles.wrapperMainHero}>
-      <div className={styles.wrapperTitleDescriptionButtonOrder}>
-        <h3>Насолоджуйся улюбленою їжею !!!<br /><span className={styles.emodji}>👨‍🍳🥣🍔🥘🍲🥗</span>
-        </h3>
-        <p>У нашому ресторані ви зможете скуштувати найсмачніші, вишукані страви Європейської кухні.</p>
+      <div className={styles.wrapperTitleDescriptionSelects}>
+        <h3>Насолоджуйся улюбленою їжею !!!<br /><span className={styles.emodji}>👨‍🍳🥣🍔🥘🍲🥗</span></h3>
+        <MySelectComponent
+          options={[
+            { value: null, label: 'Перехід до розділів блюд...' },
+            { value: 'first', label: 'Перші блюда' },
+            { value: 'second', label: 'Другі блюда' },
+            { value: 'salad-mix', label: 'Салати-мікс' },
+            { value: 'salad', label: 'Салати' },
+            { value: 'hamburger', label: 'Гамбургери' },
+            { value: 'pizza', label: 'Піци' },
+            { value: 'kebabs', label: 'Шашлики' },
+            { value: 'ice-cream', label: 'Морозиво' },
+            { value: 'juices', label: 'Соки' },
+            { value: 'tea', label: 'Чаї' },
+            { value: 'coffee', label: 'Кава' },
+          ]}
+          onChange={setSelectedType}
+          value={selectedType}
+          placeholder="Перехід до розділів блюд..."
+          isClearable
+        />
+        <MySelectComponent
+          options={filteredDishes.map(dish => ({ value: dish.name, label: dish.name }))}
+          onChange={setSelectedDish}
+          value={selectedDish}
+          placeholder="Вибір назв блюд"
+          isClearable
+        />
       </div>
       <div className={styles.sliderContainer}>
         <button onClick={prevSlide} className={styles.prevButton}>
@@ -58,7 +112,7 @@ const TheSlider = () => {
           <div className={styles.slider}>
             <div className={styles.sliderWindow}>
               <div ref={sliderRef} className={styles.sliderLine} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-                {dishes.map((dish, index) => (
+                {filteredDishes.map((dish, index) => (
                   <div key={index} className={styles.sliderItem}>
                     <div className={styles.imageContainer}>
                       <div className={styles.imageWrapper}>
@@ -80,10 +134,10 @@ const TheSlider = () => {
         </div>
       </div>
       <div className={styles.dishDetails}>
-        <h4 className={styles.dishName}>"{dishes[currentIndex].name}"</h4>
-        <div className={styles.divIngredients}><p className={styles.ingredients}>Склад: {dishes[currentIndex].ingredients}</p></div>
-        <p className={styles.weight}>Вага: {dishes[currentIndex].weight} г</p>
-        <p className={styles.price}>{dishes[currentIndex].price} грн.</p>
+        <h4 className={styles.dishName}>"{filteredDishes[currentIndex].name}"</h4>
+        <div className={styles.divIngredients}><p className={styles.ingredients}>Склад: {filteredDishes[currentIndex].ingredients}</p></div>
+        <p className={styles.weight}>Вага: {filteredDishes[currentIndex].weight} г</p>
+        <p className={styles.price}>{filteredDishes[currentIndex].price} грн.</p>
         <button className={styles.buttonOrderNow}>Замовити</button>
       </div>
     </div>

@@ -139,7 +139,7 @@
     justify-content: center;
     padding: 15px 20px; /* Верхний и нижний паддинг 10px, левый и правый паддинг 20px */
   }
-  .wrapperTitleDescriptionButtonOrder{
+  .wrapperTitleDescriptionSelects{
     width: 33%;
     padding: 10px;
   }
