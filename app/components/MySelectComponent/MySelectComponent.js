@@ -1,5 +1,5 @@
 import React from 'react';
-import Select from 'react-select';
+import Select, { components } from 'react-select';
 
 const customStyles = {
   control: (provided, state) => ({
@@ -50,8 +50,24 @@ const customStyles = {
   }),
 };
 
+const ClearIndicator = (props) => {
+  const { value } = props.selectProps;
+  // Убираем крестик, если выбрана опция "Перехід до розділів блюд..."
+  if (value && value.value === null) {
+    return null;
+  }
+  return <components.ClearIndicator {...props} />;
+};
+
 const MySelectComponent = (props) => {
-  return <Select {...props} styles={customStyles} />;
+  return (
+    <Select
+      {...props}
+      styles={customStyles}
+      components={{ ClearIndicator }}
+      placeholder={props.placeholder}
+    />
+  );
 };
 
 export default MySelectComponent;

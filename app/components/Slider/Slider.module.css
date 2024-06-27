@@ -141,7 +141,11 @@
   }
   .wrapperTitleDescriptionSelects{
     width: 33%;
-    padding: 10px;
+    padding: 10px 25px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
   }
   .ingredients{
   text-indent: 15px;
