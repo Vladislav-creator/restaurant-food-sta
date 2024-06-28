@@ -1,21 +1,30 @@
-
 "use client";
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectCartTotal } from '../components/Redux/ordersSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCartTotal, incrementQuantity, decrementQuantity } from '../components/Redux/ordersSlice';
 import styles from './MyOrder.module.css';
 
 const OrderSummary = () => {
+  const dispatch = useDispatch();
   const totalAmount = useSelector(selectCartTotal);
   const orders = useSelector((state) => state.orders.orders);
+
+  const handleIncrement = (id) => {
+    dispatch(incrementQuantity({ id }));
+  };
+
+  const handleDecrement = (id) => {
+    dispatch(decrementQuantity({ id }));
+  };
 
   return (
     <div className={styles.orderSummary}>
       <h3>Мій заказ</h3>
       <ul>
         {orders.map(order => (
-          <li key={order.id}>
-            {order.name} - {order.quantity} порція(ї) - {order.totalPrice} грн.
+          <li key={order.id} className={styles.orderItem}>
+            <span>{order.name}  <button onClick={() => handleDecrement(order.id)}>-</button> {order.quantity} порція(ї) <button onClick={() => handleIncrement(order.id)}>+</button> {order.totalPrice} грн.</span>
+           
           </li>
         ))}
       </ul>

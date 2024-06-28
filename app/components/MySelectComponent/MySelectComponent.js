@@ -1,5 +1,6 @@
+"use client";
 import React from 'react';
-import Select, { components } from 'react-select';
+ import Select, { components } from 'react-select';
 
 const customStyles = {
   control: (provided, state) => ({
@@ -71,3 +72,4 @@ const MySelectComponent = (props) => {
 };
 
 export default MySelectComponent;
+

@@ -1,25 +1,30 @@
-
+"use client";
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItemToCart, incrementQuantity, decrementQuantity, selectCartItemsById } from '../Redux/ordersSlice';
 import styles from './DishDetails.module.css';
 
 const DishDetails = ({ dish }) => {
+  
+
   const dispatch = useDispatch();
   const order = useSelector(state => selectCartItemsById(state, dish._id)); // Используем _id для поиска блюда в корзине
   const quantity = order ? order.quantity : 0;
 
   const increment = () => {
+    
     dispatch(incrementQuantity({ id: dish._id })); // Передаем _id для увеличения количества
   };
 
   const decrement = () => {
+     
     if (quantity > 0) {
       dispatch(decrementQuantity({ id: dish._id })); // Передаем _id для уменьшения количества
     }
   };
 
   const addToCart = () => {
+    
     const { _id, name, price, weight } = dish;
     dispatch(addItemToCart({ id: _id, name, price, weight })); // Передаем необходимые данные о блюде для добавления в корзину
   };

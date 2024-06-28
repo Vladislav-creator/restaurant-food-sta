@@ -14,14 +14,14 @@
   .sliderContainer {
     position: relative;
     width: 34%; 
-    margin: 0 auto; /* Центрируем по горизонтали */
+    margin: 0 auto; 
   }
   
   .imageFrame {
     position: relative;
-    width: 100%; /* Ширина кадра */
-    padding-top: 94%; /* Соотношение сторон 1:1 */
-    border: 12px solid yellow; /* Толстый желтый бордер */
+    width: 100%; 
+    padding-top: 94%; 
+    border: 12px solid yellow;
     box-sizing: border-box;
      overflow: hidden;  
     border-radius: 50%;
@@ -49,7 +49,7 @@
     width: 100%;
     height: auto;
     padding-top: 100%;
-    /* overflow: hidden; */
+    
   }
   
   .imageContainer > div {
@@ -107,4 +107,5 @@
  
 .emodji{
   font-size: 40px;
-}
+} 
+
