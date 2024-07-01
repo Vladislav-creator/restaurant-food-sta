@@ -1,4 +1,3 @@
-
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -10,7 +9,13 @@ const ordersSlice = createSlice({
   name: 'orders',
   initialState,
   reducers: {
+    clearOrder(state) {
+      console.log('Clearing order'); // логирование
+      state.orders = [];
+      state.totalPrice = 0;
+    },
     addItemToCart: (state, action) => {
+      console.log('Adding item to cart:', action.payload); // логирование
       const newItem = action.payload;
       const existingItem = state.orders.find(order => order.id === newItem.id);
       if (existingItem) {
@@ -26,6 +31,7 @@ const ordersSlice = createSlice({
       state.totalPrice += newItem.price;
     },
     delItemToCart: (state, action) => {
+      console.log('Deleting item from cart:', action.payload); // логирование
       const { id } = action.payload;
       const existingItemIndex = state.orders.findIndex(order => order.id === id);
       if (existingItemIndex !== -1) {
@@ -35,6 +41,7 @@ const ordersSlice = createSlice({
       }
     },
     incrementQuantity: (state, action) => {
+      console.log('Incrementing quantity:', action.payload); // логирование
       const { id } = action.payload;
       const existingItem = state.orders.find(order => order.id === id);
       if (existingItem) {
@@ -44,6 +51,7 @@ const ordersSlice = createSlice({
       }
     },
     decrementQuantity: (state, action) => {
+      console.log('Decrementing quantity:', action.payload); // логирование
       const { id } = action.payload;
       const existingItemIndex = state.orders.findIndex(order => order.id === id);
       if (existingItemIndex !== -1) {
@@ -61,7 +69,7 @@ const ordersSlice = createSlice({
   },
 });
 
-export const { addItemToCart, incrementQuantity, decrementQuantity, delItemToCart } = ordersSlice.actions;
+export const { clearOrder, addItemToCart, incrementQuantity, decrementQuantity, delItemToCart } = ordersSlice.actions;
 
 export const selectCartTotal = (state) => state.orders.totalPrice;
 

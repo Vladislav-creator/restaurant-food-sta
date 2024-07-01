@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectCartTotal, incrementQuantity, decrementQuantity } from '../components/Redux/ordersSlice';
+import { selectCartTotal, incrementQuantity, decrementQuantity, clearOrder } from '../components/Redux/ordersSlice';
 import styles from './MyOrder.module.css';
 
 const OrderSummary = () => {
@@ -15,6 +15,9 @@ const OrderSummary = () => {
 
   const handleDecrement = (id) => {
     dispatch(decrementQuantity({ id }));
+  };
+  const handleClearOrder = () => {
+    dispatch(clearOrder());
   };
 
   return (
@@ -31,6 +34,9 @@ const OrderSummary = () => {
       <div className={styles.total}>
         Загальна сума: {totalAmount} грн.
       </div>
+      <button onClick={handleClearOrder}>
+        Clear Order
+      </button>
     </div>
   );
 };
