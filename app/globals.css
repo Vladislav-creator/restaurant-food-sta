@@ -68,3 +68,6 @@ header a{
   border-bottom: 2px solid
   orange;
 } 
+button {
+  cursor: pointer;
+}

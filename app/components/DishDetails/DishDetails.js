@@ -37,9 +37,9 @@ const DishDetails = ({ dish }) => {
       <p className={styles.price}>{dish.price} грн.</p>
       {quantity > 0 && (
         <div className={styles.quantityControl}>
-          <button onClick={decrement}>-</button>
-          <span>Замовлено: {quantity} порція(ї)</span>
-          <button onClick={increment}>+</button>
+          <button className={styles.buttonControlQuantity} onClick={decrement}>-</button>
+          <span>Замовлено: {quantity} порц.</span>
+          <button className={styles.buttonControlQuantity} onClick={increment}>+</button>
         </div>
       )}
       <button
