@@ -1,6 +1,6 @@
 
 import styles from "./page.module.css";
- import dynamic from 'next/dynamic';
+  import dynamic from 'next/dynamic';
 
 const metadata = {
   title: "Home | Next App",

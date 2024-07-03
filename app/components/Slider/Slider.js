@@ -14,7 +14,7 @@ const TheSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedType, setSelectedType] = useState(null);
   const [selectedDish, setSelectedDish] = useState(null);
-  console.log(filteredDishes[currentIndex]);
+   console.log(filteredDishes[currentIndex]);
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ const TheSlider = () => {
         const data = await getAllDishes();
         const sortedDishes = data.sort((a, b) => a.level - b.level);
         setDishes(sortedDishes);
+
         setFilteredDishes(sortedDishes);
         setLoading(false);
       } catch (error) {
@@ -46,8 +47,6 @@ const TheSlider = () => {
     }
   }, [selectedType, dishes]);
   
- 
-  
   useEffect(() => {
     // При изменении выбранного блюда обновляем индекс слайдера
     if (selectedDish !== null) {
@@ -57,13 +56,6 @@ const TheSlider = () => {
       }
     }
   }, [selectedDish, filteredDishes]);
-
-  useEffect(() => {
-    if (filteredDishes.length > 0) {
-      localStorage.setItem('currentDish', JSON.stringify(filteredDishes[currentIndex]));
-      localStorage.setItem('selectedTypeCurrentDish', JSON.stringify(selectedType));
-    }
-  }, [filteredDishes, currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % filteredDishes.length);
@@ -161,4 +153,5 @@ const TheSlider = () => {
 };
 
 export default TheSlider;
+
 

@@ -1,11 +1,3 @@
-// import { configureStore } from '@reduxjs/toolkit';
-// import ordersReducer from './ordersSlice';
-// const store = configureStore({
-//   reducer: {
-//     orders: ordersReducer,
-//   },
-// });
-// export default store;
 
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
@@ -15,7 +7,6 @@ import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
   orders: ordersReducer,
-  // добавьте другие редьюсеры здесь
 });
 
 const persistConfig = {
