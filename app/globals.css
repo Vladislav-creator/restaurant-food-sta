@@ -64,10 +64,9 @@ header a{
   color: 
   orange; 
 }
-.myOrder.active {
-  border-bottom: 2px solid
-  orange;
-} 
+.myOrder:hover {
+  cursor: pointer;
+}
 button {
   cursor: pointer;
 }

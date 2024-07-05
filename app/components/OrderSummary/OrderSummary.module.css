@@ -1,0 +1,71 @@
+.orderSummary {
+    padding: 20px;
+  }
+  
+  .delButton {
+    background: white;
+    color: #f44336;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    border: 2px solid #f44336;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+   .delButton:hover {
+    background: #f44336;
+    color: white;
+  }
+   
+  
+  .total {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .orderPrice{
+    width: 15%;
+  }
+  .nameDish{
+    width: 20%;
+  }
+  
+  .clearOrderButton{
+    padding: 5px 10px;
+    margin: 5px;
+    background-color:rgba(187, 243, 48, 1);
+    border: none;
+    border-radius: 2px;
+  }
+  .clearOrderButton:hover
+   {
+    background-color: #7fff00; 
+  }
+
+  .orderTable {
+    width: 100%;
+     border-collapse: collapse; 
+  }
+
+.orderTable th, .orderTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.orderTable th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+.quantityColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  

@@ -1,0 +1,21 @@
+.buttonControlQuantity{
+    padding: 5px 10px;
+    margin: 5px;
+    background-color:rgba(187, 243, 48, 1);
+    border: none;
+    border-radius: 5px;
+  }
+  .buttonControlQuantity:hover
+   {
+    background-color: #7fff00; 
+  }
+  .getPortionLabel {
+    margin: 0 10px;
+  }
+  
+  .quantityControl {
+    display: flex;
+    align-items: center;
+  }
+  
+ 
