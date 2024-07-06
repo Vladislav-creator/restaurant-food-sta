@@ -1,0 +1,39 @@
+.cooksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cooksItem {
+    text-align: center;
+    flex: 1 1 calc(33.333% - 30px);
+    max-width: calc(33.333% - 30px);
+    margin-bottom: 20px;
+}
+
+.circleImage {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+}
+
+.imageCook {
+    object-fit: cover;
+}
+
+.position {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
