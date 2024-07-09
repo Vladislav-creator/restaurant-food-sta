@@ -21,7 +21,7 @@
     position: relative;
     width: 100%; 
     padding-top: 94%; 
-    border: 12px solid yellow;
+    border: 12px solid green;
     box-sizing: border-box;
      overflow: hidden;  
     border-radius: 50%;
@@ -95,6 +95,8 @@
   .wrapperMainHero{
     display: flex;
     gap: 10px;
+    margin-bottom: 15px;
+   
   }
   
   .wrapperTitleDescriptionSelects{

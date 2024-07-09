@@ -36,6 +36,9 @@ const Header = () => {
         <Link className={`link ${pathname === '/' ? 'active' : ''}`} href="/">
           Головна
         </Link>
+        <Link className={`link ${pathname === '/menu' ? 'active' : ''}`} href="/menu">
+          Меню
+        </Link>
         <Link className={`link ${pathname === '/about' ? 'active' : ''}`} href="/about">
           Про нас
         </Link>

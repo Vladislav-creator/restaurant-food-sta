@@ -1,3 +1,25 @@
 .titleFoodSta{
     color: orange;
 }
+.titleCafeRestaurant{
+    color: green;
+}
+.main{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* чтобы main занимал всю высоту экрана */
+    background-size: cover; /* чтобы изображение покрывало весь элемент */
+    background-repeat: no-repeat; /* чтобы изображение не повторялось */
+    background-position: center; /* чтобы изображение было центрировано */
+    text-align: center; /* для центрирования текста */
+    padding-bottom: 40px;
+}
+
+.video {
+    text-shadow: none;
+    border: 3px solid white;
+  }
+

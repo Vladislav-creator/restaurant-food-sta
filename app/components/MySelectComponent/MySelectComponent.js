@@ -36,10 +36,12 @@ const customStyles = {
       backgroundColor: '#d3a27f',
       color: 'white',
       cursor: 'pointer',
+      textShadow: 'none'
     },
     '&:focus': {
       backgroundColor: '#d3a27f',
       color: 'white',
+       textShadow: 'none'
     },
   }),
   menuList: (provided) => ({

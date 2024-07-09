@@ -1,9 +1,8 @@
-
 "use client";
 import React, { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import MySelectComponent from '../MySelectComponent/MySelectComponent';
-import DishDetails from '../DishDetails/DishDetails'; // Импортируем новый компонент
+import DishDetails from '../DishDetails/DishDetails';
 import styles from './Slider.module.css';
 import { getAllDishes } from '../../services';
 
@@ -14,7 +13,6 @@ const TheSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedType, setSelectedType] = useState(null);
   const [selectedDish, setSelectedDish] = useState(null);
-   console.log(filteredDishes[currentIndex]);
   const sliderRef = useRef(null);
 
   useEffect(() => {
@@ -23,7 +21,6 @@ const TheSlider = () => {
         const data = await getAllDishes();
         const sortedDishes = data.sort((a, b) => a.level - b.level);
         setDishes(sortedDishes);
-
         setFilteredDishes(sortedDishes);
         setLoading(false);
       } catch (error) {
@@ -38,17 +35,16 @@ const TheSlider = () => {
     if (selectedType !== null && selectedType.value !== null) {
       const filtered = dishes.filter(dish => dish.type === selectedType.value);
       setFilteredDishes(filtered);
-      setSelectedDish(null); // Сбрасываем выбранное блюдо при изменении типа
-      setCurrentIndex(0); // Сбрасываем текущий индекс при изменении типа
+      setSelectedDish(null);
+      setCurrentIndex(0);
     } else {
       setFilteredDishes(dishes);
-      setSelectedDish(null); // Сбрасываем выбранное блюдо при null типе
-      setCurrentIndex(0); // Сбрасываем текущий индекс при null типе
+      setSelectedDish(null);
+      setCurrentIndex(0);
     }
   }, [selectedType, dishes]);
-  
+
   useEffect(() => {
-    // При изменении выбранного блюда обновляем индекс слайдера
     if (selectedDish !== null) {
       const newIndex = filteredDishes.findIndex(dish => dish._id === selectedDish._id);
       if (newIndex !== -1) {
@@ -84,17 +80,17 @@ const TheSlider = () => {
         <MySelectComponent
           options={[
             { value: null, label: 'Перехід до розділів блюд...' },
-            { value: 'first', label: 'Перші блюда' },
-            { value: 'second', label: 'Другі блюда' },
-            { value: 'salad-mix', label: 'Салати-мікс' },
-            { value: 'salad', label: 'Салати' },
-            { value: 'hamburger', label: 'Гамбургери' },
-            { value: 'pizza', label: 'Піци' },
-            { value: 'kebabs', label: 'Шашлики' },
-            { value: 'ice-cream', label: 'Морозиво' },
-            { value: 'juices', label: 'Соки' },
-            { value: 'tea', label: 'Чаї' },
-            { value: 'coffee', label: 'Кава' },
+            { value: 'Перші блюда', label: 'Перші блюда' },
+            { value: 'Другі блюда', label: 'Другі блюда' },
+            { value: 'Салати-мікс', label: 'Салати-мікс' },
+            { value: 'Салати', label: 'Салати' },
+            { value: 'Гамбургери', label: 'Гамбургери' },
+            { value: 'Піци', label: 'Піци' },
+            { value: 'Шашлики', label: 'Шашлики' },
+            { value: 'Морозиво', label: 'Морозиво' },
+            { value: 'Соки', label: 'Соки' },
+            { value: 'Чаї', label: 'Чаї' },
+            { value: 'Кава', label: 'Кава' },
           ]}
           onChange={setSelectedType}
           value={selectedType}
@@ -146,7 +142,7 @@ const TheSlider = () => {
         </div>
       </div>
       {filteredDishes[currentIndex] && (
-        <DishDetails dish={filteredDishes[currentIndex]} /> // Обновляем DishDetails при изменении индекса
+        <DishDetails dish={filteredDishes[currentIndex]} />
       )}
     </div>
   );

@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import store, { persistor } from './components/Redux/store'; // пути могут отличаться
 import { Inter } from "next/font/google";
-import Header from './components/Header/Header';
+ import Header from './components/Header/Header';
 import "./globals.css";
-
+import 'leaflet/dist/leaflet.css';
 const inter = Inter({ subsets: ["latin"] });
 
 

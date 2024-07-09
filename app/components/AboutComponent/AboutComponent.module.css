@@ -4,6 +4,7 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 10px;
+    border: 3px solid white;
 }
 
 .cooksContainer {
@@ -30,6 +31,7 @@
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 10px;
+    border: 3px solid white;
   }
   
   .imageCook {
@@ -57,4 +59,3 @@
   .deskriptionTeamCooksparagraph {
     text-indent: 20px;
   }
-  
