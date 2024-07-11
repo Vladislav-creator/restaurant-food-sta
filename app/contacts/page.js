@@ -61,7 +61,7 @@ export default function Contacts() {
          
         <div className={styles.fotoRestorauntFoodSta}>
           <Image
-            src="/img/food-sta-new.jpg"
+            src="./img/food-sta-new.jpg"
             alt="restoraunt-food-sta"
             layout="responsive"
             width={750}

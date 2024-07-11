@@ -1,5 +1,20 @@
- :root {
-  font-family: "Droid Sans Mono";
+@font-face {
+  font-family: 'Aston';
+  src: url('/fonts/Aston.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'IstokWeb-BoldItalic';
+  src: url('/fonts/IstokWeb-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+} 
+
+ 
+
+ :root { 
+  font-family: "IstokWeb-BoldItalic", cursive; 
 }
 * {
   box-sizing: border-box;
@@ -30,8 +45,9 @@ body {
    3px  3px 0 white;
 }
 h1, h2, h3 {
+    font-family: "IstokWeb-BoldItalic", cursive; 
   text-align: center;
-  color: gray;
+  color: green;
   margin: 30px 0;
   text-shadow:
   -3px -3px 0 white,  
@@ -39,12 +55,16 @@ h1, h2, h3 {
   -3px  3px 0 white,
    3px  3px 0 white; /* Цвет обводки */
 }
+p{
+  font-family: "IstokWeb-BoldItalic", cursive; 
+}
 a {
   color: inherit;
   text-decoration: none;
 }
 
 header{
+  font-family: "IstokWeb-BoldItalic", cursive; 
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,6 +81,7 @@ header a{
 }
 .container {
   padding: 20px;
+  font-family: "IstokWeb-Regular", cursive;
 }
 .link {
   display: inline-block;

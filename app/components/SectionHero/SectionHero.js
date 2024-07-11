@@ -18,7 +18,7 @@ const TheSectionHero = () => {
             priority
           />
           </div>
-          <p className={styles.descriptionFotoWorkofFoodSta}>Професійна команда поварів, якісний, вишуканий смак</p>
+          <h3 className={styles.descriptionFotoWorkofFoodSta}>Професійна команда поварів, якісний, вишуканий смак</h3>
           </div>
           <div className={styles.wrapperImageMainAndDescription}>
           <div className={styles.circleImageMain}>
@@ -31,7 +31,7 @@ const TheSectionHero = () => {
             priority
           />
           </div>
-          <p className={styles.descriptionFotoWorkofFoodSta}>Швидка та якісна доставка їжі</p>
+          <h3 className={styles.descriptionFotoWorkofFoodSta}>Швидка та якісна доставка їжі</h3>
           </div>
           <div className={styles.wrapperImageMainAndDescription}>
           <div className={styles.circleImageMain}>
@@ -44,7 +44,7 @@ const TheSectionHero = () => {
             priority
           />
           </div>
-          <p className={styles.descriptionFotoWorkofFoodSta}>Якісне та доброзичливе обслуговування</p>
+          <h3 className={styles.descriptionFotoWorkofFoodSta}>Якісне та доброзичливе обслуговування</h3>
           </div>
           </div>
       </section>

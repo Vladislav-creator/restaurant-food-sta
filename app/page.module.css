@@ -1,5 +1,7 @@
 .titleFoodSta{
     color: orange;
+    font-family: "Aston", cursive; 
+   font-weight: 900;
 }
 .titleCafeRestaurant{
     color: green;

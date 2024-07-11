@@ -52,7 +52,7 @@ const TheReviews = () => {
       <div className={styles.review}>
         <div className={styles.oneReview}>
           <p className={styles.stars}>{reviews[currentIndex].stars}</p>
-          <div className={styles.text}>{reviews[currentIndex].text}</div>
+          <p className={styles.text}>{reviews[currentIndex].text}</p>
           <div className={styles.reviewContent}>
             <div className={styles.circleImageMain}>
               <Image
