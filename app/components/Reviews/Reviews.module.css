@@ -1,6 +1,7 @@
 
 
 .wrapper {
+  color: green;
   display: flex;
   position: relative;
   width: 50%;
@@ -65,6 +66,11 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 1;
+      
+&:hover {
+  color: 
+  orangered;
+}
 }
 
 .scrollButton:disabled {

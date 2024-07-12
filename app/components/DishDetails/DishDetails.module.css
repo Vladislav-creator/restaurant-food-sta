@@ -1,7 +1,7 @@
 .ingredients{
     text-indent: 15px;
     font-style: italic;
-    color: #666;
+    color:green;
   }
   .buttonOrderNow {
     background-color: rgba(187, 243, 48, 1);
@@ -15,7 +15,7 @@
   .dishName {
     font-weight: bold;
     margin-bottom: 20px;
-    color: gray;
+    color: green;
     font-size: 20px;
     text-align: center;
   }
@@ -34,8 +34,12 @@
     padding: 10px;
    
   }
-  
-
+  .weight{
+    color: green;
+  }
+  .price{
+    color: green;
+  }
   .buttonOrderNow:hover
    {
     background-color: #7fff00; 

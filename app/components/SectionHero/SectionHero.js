@@ -5,7 +5,7 @@ const TheSectionHero = () => {
     return (
         
       <section >
-        <h2>Чому нас рекомендують відвідати?</h2>
+        <h2 className={styles.titleSectionHero}>Чому нас рекомендують відвідати?</h2>
         <div className={styles.wrapperSectionHero}>
         <div className={styles.wrapperImageMainAndDescription}>
         <div className={styles.circleImageMain}>

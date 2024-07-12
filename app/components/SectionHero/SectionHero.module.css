@@ -30,4 +30,6 @@
     object-fit: cover;
   }
 
- 
+  .titleSectionHero {
+    margin: 0 0 30px;
+  }

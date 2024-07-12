@@ -63,7 +63,6 @@ export default function Contacts() {
           <Image
             src="./img/food-sta-new.jpg"
             alt="restoraunt-food-sta"
-            layout="responsive"
             width={750}
             height={450}
             className={styles.imageCook}
