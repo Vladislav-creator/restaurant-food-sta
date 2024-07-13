@@ -1,20 +1,9 @@
- /* @font-face {
-  font-family: 'Aston';
-  src: url('/fonts/Aston.ttf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-} */
-@font-face {
-  font-family: 'IstokWeb-BoldItalic';
-  src: url('/fonts/IstokWeb-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
-}  
+ 
 
 
 
   :root { 
-   font-family: "IstokWeb-BoldItalic", cursive;  
+   font-family: "Inter";  
  
   
 } 
