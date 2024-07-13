@@ -1,7 +1,12 @@
+
+
 import React from 'react';
 import Image from 'next/image';
 import styles from './ContactsPage.module.css';
 import MapWithMarker from '../components/MapWithMarker';
+
+
+
 
 const metadata = {
   title: 'Контакти кафе-ресторана "Food Sta"',
@@ -9,6 +14,9 @@ const metadata = {
 };
 
 export default function Contacts() {
+
+  
+
   return (
     <div className={styles.container}>
       <h1>Наші контакти</h1>
@@ -73,6 +81,7 @@ export default function Contacts() {
       <div className={styles.map}>
         <MapWithMarker/>
       </div>
+      
     </div>
   );
 }

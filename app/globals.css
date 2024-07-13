@@ -1,12 +1,8 @@
- 
+* {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+}
 
-
-
-  :root { 
-   font-family: "Inter";  
- 
-  
-} 
 * {
   box-sizing: border-box;
   padding: 0;
