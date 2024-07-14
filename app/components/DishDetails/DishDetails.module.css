@@ -4,25 +4,25 @@
     color:green;
   }
   .buttonOrderNow {
+   
     background-color: rgba(187, 243, 48, 1);
     border-radius: 30px;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 20px; /* Верхний и нижний паддинг 10px, левый и правый паддинг 20px */
+    padding: 15px 20px; 
   }
   .dishName {
-    font-weight: bold;
     margin-bottom: 20px;
     color: green;
-    font-size: 20px;
+   
     text-align: center;
   }
   .divIngredients{
     text-align: start;
     padding-left: 15px;
-    
+    font-size: 20px;
   }
   .dishDetails {
     display: flex;
@@ -36,9 +36,11 @@
   }
   .weight{
     color: green;
+    font-size: 20px;
   }
   .price{
     color: green;
+    font-size: 20px;
   }
   .buttonOrderNow:hover
    {

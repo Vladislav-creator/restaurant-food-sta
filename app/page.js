@@ -23,7 +23,7 @@ export default function Home() {
         <source src="./video-restaurant-1.mp4" type="video/mp4" />
         Ваш браузер не поддерживает видео в формате MP4.
       </video>
-     <h2>Що кажуть наші відвідувачі?</h2>
+     <h2 className={styles.titleWhatSayOurCustomer}>Що кажуть наші відвідувачі?</h2>
       <Reviews/>
     </main>
     </div>

@@ -122,7 +122,7 @@ const OrderSummary = () => {
         Загальна сума: {totalAmount} грн.
       </div>
       <button className={styles.clearOrderButton} onClick={handleClearOrder}>
-        Clear Order
+        Видалити замовлення
       </button>
     </div>
   );

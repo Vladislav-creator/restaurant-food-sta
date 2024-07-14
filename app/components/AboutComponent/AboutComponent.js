@@ -7,12 +7,12 @@ const AboutComponent = ({ headChef, otherCooks }) => {
   return (
     <>
       <h1>Наша команда</h1>
-      <div className={styles.deskriptionTeamCooks}>
-        <p className={styles.deskriptionTeamCooksparagraph}>Команда кухарів ресторану Food Sta – це команда професіоналів, яка має великий досвід у кулінарній сфері. Усі вони багаторазові призери та учасники різних кулінарних конкурсів та фестивалів.</p>
-        <p>Що поєднує наших кухарів, крім місця роботи? Звичайно це любов і пристрасть до своєї справи, а ще багата фантазія, любов до творчості та винахідливість, адже готувати строго за рецептом, звичайно, здорово, проте наша команда майстерних </p>
-        <p className={styles.deskriptionTeamCooksparagraph}>Справжнє бажання та здатність удосконалюватися притаманні кожному кухареві ресторану Food Sta.</p>
-        <p className={styles.deskriptionTeamCooksparagraph}>У нас смачно, душевно-привабливо і будь-яка страва завжди виняткової якості та бездоганної свіжості.</p>
-        <p className={styles.deskriptionTeamCooksparagraph}>Хто спробує - то обов'язково полюбить!</p>
+      <div className={styles.descriptionTeamCooks}>
+        <p className={styles.descriptionTeamCooksparagraph}>Команда кухарів ресторану Food Sta – це команда професіоналів, яка має великий досвід у кулінарній сфері. Усі вони багаторазові призери та учасники різних кулінарних конкурсів та фестивалів.</p>
+        <p className={styles.descriptionTeamCooksparagraph}>Що поєднує наших кухарів, крім місця роботи? Звичайно це любов і пристрасть до своєї справи, а ще багата фантазія, любов до творчості та винахідливість, адже готувати строго за рецептом, звичайно, здорово, проте наша команда майстерних кулінарів завжди прагне покращити страву або навіть створити нову, зробити звичайну, здавалося б страву незвичайною.</p>
+        <p className={styles.descriptionTeamCooksparagraph}>Справжнє бажання та здатність удосконалюватися притаманні кожному кухареві ресторану Food Sta.</p>
+        <p className={styles.descriptionTeamCooksparagraph}>У нас смачно, душевно-привабливо і будь-яка страва завжди виняткової якості та бездоганної свіжості.</p>
+        <p className={styles.descriptionTeamCooksparagraph}>Хто спробує - то обов'язково полюбить!</p>
       </div>
       <div className={styles.cooksContainer}>
         {headChef && (

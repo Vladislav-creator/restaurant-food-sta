@@ -22,7 +22,7 @@ export default function Contacts() {
       <h1>Наші контакти</h1>
       <div className={styles.wrapperAddressAndFotoRestorauntFoodSta}>
         <div className={styles.addressRestorauntFoodSta}>
-          <p >Адреса ресторану:</p>
+          <p >Адреса кафе-ресторану:</p>
          <p className={styles.cityKiev}>м.Київ</p>
          <div  className={styles.iconMapAndStreet}>
          <Image
@@ -41,7 +41,7 @@ export default function Contacts() {
             height={26}
             className={styles.icon}
             priority
-          /> <p className={styles.text}>valdisbeketov@gmail.com</p></div>
+          /> <p className={styles.textEmail}>valdisbeketov@gmail.com</p></div>
         
         <div  className={styles.iconEmailAndEmail}>
          <Image
@@ -68,14 +68,16 @@ export default function Contacts() {
           </div>
          
         <div className={styles.fotoRestorauntFoodSta}>
-          <Image
+           <Image
             src="./img/food-sta-new.jpg"
             alt="restoraunt-food-sta"
-            width={750}
-            height={450}
+            width={600}
+            height={400}
             className={styles.imageCook}
+            layout="responsive"
             priority
-          />
+          /> 
+        
         </div>
       </div>
       <div className={styles.map}>

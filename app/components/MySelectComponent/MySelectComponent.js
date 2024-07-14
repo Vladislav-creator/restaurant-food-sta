@@ -7,6 +7,7 @@ const customStyles = {
     ...provided,
     border: '1px solid #d3a27f',
     borderRadius: '10px',
+    fontSize: '20px',
     boxShadow: state.isFocused ? '0 0 0 1px #d3a27f' : 'none',
     '&:hover': {
       borderColor: 'brown',
@@ -27,6 +28,7 @@ const customStyles = {
     border: '1px solid #d3a27f',
     background: 'white',
     borderRadius: '10px',
+    fontSize: '20px',
   }),
   option: (provided, state) => ({
     ...provided,
