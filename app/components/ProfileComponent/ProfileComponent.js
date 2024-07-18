@@ -1,52 +1,4 @@
-// "use client";
-// import { useEffect } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchProfile } from '../Redux/userSlice';
-// import { useRouter } from 'next/navigation';
-// import Image from "next/image";
-// import styles from './ProfileComponent.module.css'
-// const Profile = () => {
-//   const dispatch = useDispatch();
-//   const user = useSelector((state) => state.user.user);
-//   console.log(user);
-//   const router = useRouter();
 
-//   const BASEURL = process.env.NEXT_PUBLIC_BASEURL;
-//   const avatarURL = user ? `${BASEURL}/${user.avatarURL}` : '';
-
-//   useEffect(() => {
-//     dispatch(fetchProfile());
-//   }, [dispatch]);
-
-//   useEffect(() => {
-//     if (!user) {
-//       router.push('/login');
-//     }
-//   }, [user, router]);
-
-//   if (!user) {
-//     return null; // Можно добавить заглушку или прелоадер здесь
-//   }
-
-//   return (
-//     <div>
-//       <h1>Welcome, {user.name}</h1>
-//       <div className={styles.imageWrapper}>
-//       <Image
-//                           src={avatarURL}
-//                           alt="User Avatar"
-//                           width={250}
-//                           height={250}
-//                           className={styles.image}
-//                           priority={true}
-//                         />
-//                         </div>
-//       <p>Email: {user.email}</p>
-//     </div>
-//   );
-// };
-
-// export default Profile;
 
 "use client";
 import { useEffect, useState } from 'react';
@@ -59,7 +11,7 @@ import styles from './ProfileComponent.module.css';
 const Profile = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
-  console.log(user);
+  
   const [avatarFile, setAvatarFile] = useState(null);
   const router = useRouter();
    const BASEURL = process.env.NEXT_PUBLIC_BASEURL;
